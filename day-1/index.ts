@@ -6,41 +6,27 @@ const processInput = (): number[] => {
     return lines.map((line) => parseInt(line.trim()))
 }
 
-const entries = processInput()
+const mapInput = (input: Array<number>): {} => {
+    const mappedInput = {};
+    input.forEach(element => {
+        const complement = 2020 - element
+        mappedInput[element] = complement
+    });
 
-const partOne = () => {
-    for (let i = 0; i < entries.length; i ++) {
-        const entryA = entries[i]
-    
-        for (let j = i + 1; j < entries.length; j ++) {
-            const entryB = entries[j]
-    
-            if (entryA + entryB === 2020) {
-                console.log(entryA * entryB)
-                break;
-            }
-        }
-    }
+    return mappedInput
 }
 
-const partTwo = () => {
-    for (let i = 0; i < entries.length; i ++) {
-        const entryA = entries[i]
-    
-        for (let j = i + 1; j < entries.length; j ++) {
-            const entryB = entries[j]
-    
-            for (let k = j + 1; k < entries.length; k ++) {
-                const entryC = entries[k]
-    
-                if (entryA + entryB + entryC === 2020) {
-                    console.log(entryA * entryB * entryC)
-                    break;
-                }
-            }
+const getAnswer = (mappedInput: {}): number => {
+    for (const key in mappedInput) {
+        const complement = mappedInput[key]
+        if(mappedInput[complement]){
+            return parseInt(key) * complement
         }
-    }
+      }
 }
 
-partOne()
-partTwo()
+const input = processInput()
+const mappedInput = mapInput(input)
+const answer = getAnswer(mappedInput)
+
+console.log(answer)
