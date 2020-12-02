@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "es2017"
+    ],    
+    "baseUrl": "/",
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": false,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "target": "es2017",
+    "outDir": "lib",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
