@@ -1,32 +1,11 @@
 import { readFileSync } from 'fs'
+import CharStringHelper from '../utilities/char'
 
 type Password = {
     password?: string,
     specialChar?: string,
     specialCharMin?: number,
     specialCharMax?: number
-}
-
-class CharStringHelper {
-    string: string
-    currentChar: any
-    nextChar: any
-    currentCharPos = 0
-    nextCharPos = 1
-
-    constructor(str: string) {
-        this.string = str
-        this.currentChar = str.charAt(this.currentCharPos)
-        this.nextChar = str.charAt(this.nextCharPos)
-    }
-
-    next(): void {
-        this.currentCharPos++
-        this.nextCharPos++
-
-        this.currentChar = this.string.charAt(this.currentCharPos)
-        this.nextChar = this.string.charAt(this.nextCharPos)
-    }
 }
 
 function processInput(): Array<string> {

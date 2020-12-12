@@ -1,0 +1,20 @@
+  {
+    "env": {
+      "node": true,
+      "jest": true
+    },
+    "parser": "@typescript-eslint/parser",
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:prettier/recommended",
+      "prettier/@typescript-eslint"
+    ],
+    "rules": {
+      "no-non-null-assertion": 0,
+      "require-atomic-updates": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-non-null-assertion": "off",
+      "@typescript-eslint/camelcase": "off"
+    }
+  }
