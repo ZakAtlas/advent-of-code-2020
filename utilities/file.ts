@@ -11,7 +11,7 @@ const doesFileExist = (pathName: string): boolean => {
 
 const runChildNodeProcess = async (path: string): Promise<void> => {
     const solutionProcess = childProcess.fork(path)
-    
+
     return new Promise((resolve, reject) => {
         solutionProcess.on("close", (code) => {
             if (code === 0) {
